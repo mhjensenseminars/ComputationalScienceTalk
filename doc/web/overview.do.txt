@@ -1,0 +1,49 @@
+# Strange way of testing for vortex...
+# #ifdef NON_VORTEX
+TITLE: Slides and various material
+
+TOC: off
+# #else
+TITLE: Slides and various material for talks on computational science
+AUTHOR: Morten Hjorth-Jensen  Email:hjensen@nscl.msu.edu
+# #endif
+
+<%
+pub_url = 'http://mhjensenseminars.github.io/ComputationalScienceTalk/doc/pub'
+published = ['CleanCode',]
+chapters = {
+ 'CleanCode': 'Why writing clear code matters',
+}
+%>
+
+
+
+<%def name="text_types(name)">
+
+ * LaTeX PDF:
+   * For printing:
+     * "Standard one-page format": "${pub_url}/${name}/pdf/${name}-print.pdf"
+ * HTML:
+   * "Plain html style": "${pub_url}/${name}/html/${name}.html"
+   * "reveal.js beige slide style": "${pub_url}/${name}/html/${name}-reveal.html"
+   * "Bootstrap style": "${pub_url}/${name}/html/${name}-bs.html"
+
+</%def>
+
+<%def name="slide_types(name)">
+</%def>
+
+The material is produced in various formats for printing and on-screen reading.
+
+
+
+======= Slides in various formats =======
+
+% for ch in published:
+===== ${chapters[ch]} =====
+
+${text_types(ch)}
+
+% endfor
+
+
